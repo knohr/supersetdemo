@@ -1,0 +1,18 @@
+version: 0.2
+
+env:
+  variables:
+    AWS_ACCOUNT_ID: 535710392721
+
+
+phases:
+  install:
+    commands:
+      - docker run --privileged --rm tonistiigi/binfmt --install all
+
+  build:
+    commands:
+      - terraform apply -auto-approve
+  post_build:
+    commands:
+      - echo tf completed on `date`
