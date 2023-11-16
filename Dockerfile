@@ -9,6 +9,7 @@ RUN superset fab create-admin \
               --firstname Superset \
               --lastname Admin \
               --email admin@superset.com \
-              --password admin
-
+              --password notsecure
+RUN superset db upgrade
+RUN superset superset init
 USER superset
