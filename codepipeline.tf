@@ -28,7 +28,7 @@ resource "aws_codepipeline" "codepipeline" {
               OAuthToken           = data.aws_secretsmanager_secret_version.github_credentials.secret_string 
               Owner                = "knohr"
               Repo                 = "supersetdemo"
-              Branch               = "main"
+              Branch               = "master"
               PollForSourceChanges = true 
             }
         }
